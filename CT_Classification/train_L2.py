@@ -42,26 +42,26 @@ train_loader, val_loader, test_loader = dataset.get_dataset(PATH, TEST_PATH, SIZ
 
 # 定义模型、优化器、损失函数
 # 加载BiT模型
-model = models.KNOWN_MODELS["BiT-M-R50x1"](head_size=224, zero_head=True)
-model.load_from(np.load(f"pre_model/BiT-M-R50x1.npz"))
-
-model = model.to(device)
-
-# 冻结 BiT 的所有层
-for param in model.parameters():
-    param.requires_grad = False
-
-num_classes = 2  # 假设新的分类是10个类别
-model.head = KANHead(100352, num_classes).to(device)
-
-model.head = model.head.to(device)
-
-# 仅解冻新的分类头层
-for param in model.head.parameters():
-    param.requires_grad = True
-
-optimizer = torch.optim.SGD(model.head.parameters(), lr=1e-6, momentum=0.9, weight_decay=6e-3)
-criterion = FocalLoss()
+# model = models.KNOWN_MODELS["BiT-M-R50x1"](head_size=224, zero_head=True)
+# model.load_from(np.load(f"pre_model/BiT-M-R50x1.npz"))
+#
+# model = model.to(device)
+#
+# # 冻结 BiT 的所有层
+# for param in model.parameters():
+#     param.requires_grad = False
+#
+# num_classes = 2  # 假设新的分类是10个类别
+# model.head = KANHead(100352, num_classes).to(device)
+#
+# model.head = model.head.to(device)
+# 
+# # 仅解冻新的分类头层
+# for param in model.head.parameters():
+#     param.requires_grad = True
+#
+# optimizer = torch.optim.SGD(model.head.parameters(), lr=1e-6, momentum=0.9, weight_decay=6e-3)
+# criterion = FocalLoss()
 
 model = network.initialize_model(backbone, is_pretrained)
 optimizer = torch.optim.SGD(model.parameters(), lr=0.001, momentum=0.9, weight_decay=6e-3)  # 更新所有层权重
