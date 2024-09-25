@@ -1,7 +1,10 @@
 # 医疗影像分析
 ## 1.CT医学影像伪影识别
 
-首先，````中下载（我的Git LFS不知出了什么问题，抱歉）我们训练好的模型文件： ````
+首先，``通过百度网盘分享的文件：checkpoint_best_1.pkl
+链接：https://pan.baidu.com/s/1KabzESMMmS7J7phYmHL1Fw?pwd=mswi 
+提取码：mswi``
+中下载（我的Git LFS不知出了什么问题，抱歉）我们训练好的模型文件： ``checkpoint_best_1.pkl``
 
 将下载好的模型文件置于 ``CT_Classification/pre_model`` 下。
 
@@ -9,8 +12,14 @@
 
 ## 2.超声左心室和结肠息肉分割
 
-首先，下载的我们训练好的模型文件： ``checkpoint_best.pth``
-还有我们整合的数据文件： ``union.zip``
+首先，``通过百度网盘分享的文件：checkpoint_best.pth
+链接：https://pan.baidu.com/s/12f_Gq880ZgXhqtDmZPLvKw?pwd=mswi 
+提取码：mswi``
+
+下载的我们训练好的模型文件： ``checkpoint_best.pth``
+还有我们整合的数据文件： ``通过百度网盘分享的文件：union.zip
+链接：https://pan.baidu.com/s/1v3xXnTdvnYY8-c6UiVj0Hw?pwd=mswi 
+提取码：mswi``
 
 将下载好的模型文件置于 ``finetune-SAM/2D-SAM_vit_b_decoder_adapter_TrainDataset_noprompt`` 下,
 将下载好的数据文件置于 ``finetune-SAM`` 下
