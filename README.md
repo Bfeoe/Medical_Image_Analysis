@@ -5,6 +5,7 @@
 > 通过百度网盘分享的文件：checkpoint_best_1.pkl
 > 链接：https://pan.baidu.com/s/1KabzESMMmS7J7phYmHL1Fw?pwd=mswi 
 > 提取码：mswi
+
 中下载（我的Git LFS不知出了什么问题，抱歉）我们训练好的模型文件： ``checkpoint_best_1.pkl``
 
 将下载好的模型文件置于 ``CT_Classification/pre_model`` 下。
